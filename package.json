@@ -1,5 +1,5 @@
 {
-  "name": "svelte-preprocess",
+  "name": "@dp/svelte-preprocess",
   "version": "3.4.0",
   "license": "MIT",
   "main": "dist/index.js",
