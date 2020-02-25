@@ -62,7 +62,12 @@ export const parseFile = async (
     if (path.match(/^(https?:)?\/\//) == null) {
       path = resolveSrc(filename, path);
       if (await doesFileExist(path)) {
-        content = await getSrcContent(path);
+        const srcFile = await getSrcContent(path);
+        if (attributes.append == true) {
+          content += `\n${srcFile}`;
+        } else {
+          content = srcFile;
+        }
         dependencies.push(path);
       }
     }
